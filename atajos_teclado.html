@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atajos teclado</title>
+    <link rel="stylesheet" href="atajos_teclado.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="atajos_teclado.js" defer></script>
+</head>
+<body>
+    <!----------------------------------->
+    <!--|estructuracion_atajos_teclado|-->
+    <!----------------------------------->
+    <main class="app">
+        <!-- ENCABEZADO: título y descripción -->
+        <header class="encabezado">
+            <h1>Atajos Teclado</h1>
+            <p>Cinco atajos básicos. Presiónalos en tu teclado para practicar.</p>
+        </header>
+        <!-- BARRA DE CONTROLES -->
+        <section class="controles">
+            <!-- Elegir el sistema: cambia la tecla Ctrl por Cmd (⌘) en las tarjetas -->
+            <div class="sistema">
+                <button class="btn-sistema" data-sistema="windows" type="button">Windows / Linux</button>
+                <button class="btn-sistema" data-sistema="mac" type="button">Mac</button>
+            </div>
+            <!-- Progreso: JavaScript escribe cuántos atajos dominas -->
+            <p id="progreso" class="progreso"></p>
+        </section>
+        <!-- TARJETAS: data-id identifica el atajo y data-tecla la letra que se detecta -->
+        <section class="tarjetas">
+            <article class="tarjeta" data-id="copiar" data-tecla="c">
+                <div class="teclas"><kbd data-mod>Ctrl</kbd><span>+</span><kbd>C</kbd></div>
+                <h2>Copiar</h2>
+                <p>Copia el texto o archivo seleccionado.</p>
+                <p class="practica">Practicado: <strong class="veces">0</strong> veces</p>
+                <label class="check"><input type="checkbox" data-aprendido> Ya lo domino</label>
+            </article>
+            <article class="tarjeta" data-id="pegar" data-tecla="v">
+                <div class="teclas"><kbd data-mod>Ctrl</kbd><span>+</span><kbd>V</kbd></div>
+                <h2>Pegar</h2>
+                <p>Pega lo que copiaste o cortaste antes.</p>
+                <p class="practica">Practicado: <strong class="veces">0</strong> veces</p>
+                <label class="check"><input type="checkbox" data-aprendido> Ya lo domino</label>
+            </article>
+            <article class="tarjeta" data-id="cortar" data-tecla="x">
+                <div class="teclas"><kbd data-mod>Ctrl</kbd><span>+</span><kbd>X</kbd></div>
+                <h2>Cortar</h2>
+                <p>Quita lo seleccionado para pegarlo en otro lugar.</p>
+                <p class="practica">Practicado: <strong class="veces">0</strong> veces</p>
+                <label class="check"><input type="checkbox" data-aprendido> Ya lo domino</label>
+            </article>
+            <article class="tarjeta" data-id="deshacer" data-tecla="z">
+                <div class="teclas"><kbd data-mod>Ctrl</kbd><span>+</span><kbd>Z</kbd></div>
+                <h2>Deshacer</h2>
+                <p>Revierte la última acción que hiciste.</p>
+                <p class="practica">Practicado: <strong class="veces">0</strong> veces</p>
+                <label class="check"><input type="checkbox" data-aprendido> Ya lo domino</label>
+            </article>
+            <article class="tarjeta" data-id="todo" data-tecla="a">
+                <div class="teclas"><kbd data-mod>Ctrl</kbd><span>+</span><kbd>A</kbd></div>
+                <h2>Seleccionar todo</h2>
+                <p>Selecciona todo el contenido de la página o del documento.</p>
+                <p class="practica">Practicado: <strong class="veces">0</strong> veces</p>
+                <label class="check"><input type="checkbox" data-aprendido> Ya lo domino</label>
+            </article>
+        </section>
+        <!-- Botón para borrar el progreso -->
+        <button id="btnReiniciar" class="btn-reiniciar" type="button">Reiniciar progreso</button>
+    </main>
+</body>
+</html>

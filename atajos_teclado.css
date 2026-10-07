@@ -1,0 +1,142 @@
+/* ===== VARIABLES DE COLOR (se usan en todo el archivo) ===== */
+:root {
+    --fondo: #eceff3;          /* fondo de la página */
+    --tarjeta: #ffffff;        /* fondo de las tarjetas */
+    --texto: #1f2733;          /* color principal del texto */
+    --texto-suave: #627084;    /* textos secundarios */
+    --borde: #d3d9e2;          /* color de los bordes */
+    --acento: #3d5a80;         /* azul grisáceo: botones y detalles */
+    --tecla: #fdf8ec;          /* color de las teclas dibujadas */
+    --ok: #2a8c6f;             /* verde: atajo dominado */
+    --alerta: #b3401f;         /* rojo anaranjado: reiniciar */
+}
+/* ===== REINICIO BÁSICO ===== */
+* {
+    box-sizing: border-box;    /* el padding no agranda los elementos */
+    margin: 0;
+    padding: 0;
+}
+/* ===== ESTILO GENERAL DE LA PÁGINA ===== */
+body {
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.5;
+    padding: 24px 16px;
+}
+/* Contenedor central con ancho máximo */
+.app {
+    max-width: 900px;
+    margin: 0 auto;
+}
+/* ===== ENCABEZADO ===== */
+.encabezado {
+    margin-bottom: 20px;
+}
+.encabezado h1 {
+    font-size: 2rem;
+    color: var(--acento);
+}
+.encabezado p {
+    color: var(--texto-suave);
+}
+/* ===== BARRA DE CONTROLES ===== */
+.controles {
+    display: flex;
+    flex-wrap: wrap;           /* en pantallas pequeñas se acomodan en dos líneas */
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.sistema {
+    display: flex;
+    gap: 6px;
+}
+.btn-sistema {
+    padding: 8px 14px;
+    background: var(--tarjeta);
+    color: var(--texto);
+    border: 1px solid var(--borde);
+    border-radius: 20px;
+    cursor: pointer;
+}
+/* Sistema seleccionado (JavaScript le agrega la clase "activo") */
+.btn-sistema.activo {
+    background: var(--acento);
+    border-color: var(--acento);
+    color: #fff;
+}
+.progreso {
+    font-weight: bold;
+    color: var(--acento);
+}
+/* ===== TARJETAS ===== */
+.tarjetas {
+    display: grid;
+    /* columnas automáticas: se acomodan según el ancho disponible */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+}
+.tarjeta {
+    background: var(--tarjeta);
+    border: 2px solid var(--borde);
+    border-radius: 12px;
+    padding: 20px;
+    transition: border-color 0.2s, transform 0.2s;
+}
+/* Tarjeta que se ilumina al presionar su atajo (clase agregada con JavaScript) */
+.tarjeta.pulsada {
+    border-color: var(--acento);
+    transform: translateY(-4px);
+}
+/* Tarjeta con el atajo dominado */
+.tarjeta.dominado {
+    border-color: var(--ok);
+}
+.tarjeta h2 {
+    font-size: 1.2rem;
+    margin-top: 12px;
+}
+.tarjeta p {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+}
+/* ===== TECLAS DIBUJADAS ===== */
+.teclas {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+/* <kbd> es la etiqueta HTML para representar una tecla */
+kbd {
+    min-width: 48px;
+    padding: 10px 14px;
+    background: var(--tecla);
+    border: 1px solid var(--borde);
+    border-bottom: 4px solid var(--borde);  /* da efecto de tecla en relieve */
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+.practica {
+    margin: 8px 0;
+}
+/* ===== CASILLA "YA LO DOMINO" ===== */
+.check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+/* ===== BOTÓN REINICIAR ===== */
+.btn-reiniciar {
+    margin-top: 20px;
+    background: none;
+    border: none;
+    color: var(--alerta);
+    cursor: pointer;
+    font-size: 0.95rem;
+}
